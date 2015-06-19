@@ -45,6 +45,13 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 *2-* Add the MBunit and Gallio reference within the reference automation project.
 
+
+### How parallelize the test case execution?
+
+*1-* Set each test classes with the next tags: TestFixture and Parallelizable.
+ 
+ Example:
+
     /// <summary>
     /// This class checks the Home page functionality
     /// </summary>
