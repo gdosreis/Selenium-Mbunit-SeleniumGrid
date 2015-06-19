@@ -82,3 +82,14 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 [TestFixture]: Specifies that class represent a test fixture(Test class).
 
 [Parallelizable]: Specifies that the corresponding test can be run in parallel with other parallelizable test.
+
+
+*2-* Go to the AssemblyInfo.cs Property file
+
+*3-* Add the next properties : DegreeOfParallelism and Parallelizable
+
+Example:
+
+     [assembly: DegreeOfParallelism(4)]
+
+     [assembly: Parallelizable(TestScope.Self)]
