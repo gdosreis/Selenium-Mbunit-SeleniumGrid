@@ -1,6 +1,6 @@
 # Selenium-Mbunit-SeleniumGrid
 
-## How config Selenium Grid?
+## How configure Selenium Grid?
 
 *1-*  download Selenium Standalone from http://www.seleniumhq.org/download/.
 
@@ -37,3 +37,10 @@ The default port the hub uses to listen for new requests is port 4444. This is w
     
 -maxSession is used to set the maximum number of browsers that can run in parallel on the node.
 
+
+
+##How configure MBunit?
+
+*1-* Install the Gallio-MBunit pakage
+
+*2-* Add the MBunit and Gallio reference within the reference automation project.
