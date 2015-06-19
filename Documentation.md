@@ -26,3 +26,7 @@ The default port the hub uses to listen for new requests is port 4444. This is w
   
 -port  is used to set up the port used by the hub.
 
+    -browser browserName=safari
+
+-browser is used to specify an additional browser to be used
+
