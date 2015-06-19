@@ -28,7 +28,11 @@ The default port the hub uses to listen for new requests is port 4444. This is w
   
 -port  is used to set up the port used by the hub.
 
-    -browser browserName=safari
+    -browser: browserName={android, chrome, firefox, htmlunit, internet explorer, iphone, opera} version={browser version} firefox_binary={path to executable binary} chrome_binary={path to executable binary} maxInstances={maximum number of browsers of this type} platform={WINDOWS, LINUX, MAC}
 
--browser is used to specify an additional browser to be used
+-browser is used to specify an additional browser that to be used and set the browser settings.
+
+    -maxSession 
+    
+-maxSession is used to set the maximum number of browsers that can run in parallel on the node.
 
