@@ -2,21 +2,21 @@
 
 ## How configure Selenium Grid?
 
-*1-*  download Selenium Standalone from http://www.seleniumhq.org/download/.
+**1-**  download Selenium Standalone from http://www.seleniumhq.org/download/.
 
-*2-* In the remote machine or Virtual machine open two consoles.
+**2-** In the remote machine or Virtual machine open two consoles.
 
-*3-* In the first console execute the next line: 
+**3-** In the first console execute the next line: 
 
      java -jar selenium-server-standalone-2.45.0.jar -role hub  
     //In the Standalone folder
 
-*4-* In the second console execute the next line: 
+**4-** In the second console execute the next line: 
 
     java -jar selenium-server-standalone-2.45.0.jar -role node  -hub http://localhost:4444/grid/register -Dwebdriver.chrome.driver=chromedriver.exe  -Dwebdriver.ie.driver=IEDriverServer.exe  
     //In the Standalone folder.
 
-*5-* Enter to localhost:4444/grid/console, if the page is loaded,  the server started correctly. // In this page could be find the machine url that will be used to instantiate the RemoteWebDriver. Ex- id: http://192.168.6.83:5555.
+**5-** Enter to localhost:4444/grid/console, if the page is loaded,  the server started correctly. // In this page could be find the machine url that will be used to instantiate the RemoteWebDriver. Ex- id: http://192.168.6.83:5555.
 
 
 ### Parameters
@@ -47,14 +47,14 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 ##How configure MBunit?
 
-*1-* Install the Gallio-MBunit pakage
+**1-** Install the Gallio-MBunit pakage
 
-*2-* Add the MBunit and Gallio reference within the reference automation project.
+**2-** Add the MBunit and Gallio reference within the reference automation project.
 
 
 ### How parallelize the test case execution?
 
-*1-* Set each test classes with the next tags: TestFixture and Parallelizable.
+**1-** Set each test classes with the next tags: TestFixture and Parallelizable.
  
  Example:
 
@@ -90,9 +90,9 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 [Parallelizable]: Specifies that the corresponding test can be run in parallel with other parallelizable test.
 
 
-*2-* Go to the AssemblyInfo.cs Property file
+**2-** Go to the AssemblyInfo.cs Property file
 
-*3-* Add the next properties : DegreeOfParallelism and Parallelizable
+**3-** Add the next properties : DegreeOfParallelism and Parallelizable
 
 Example:
 
