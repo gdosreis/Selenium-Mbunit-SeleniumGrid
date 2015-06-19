@@ -11,3 +11,18 @@
 *4-* In the second console execute the next line: java -jar selenium-server-standalone-2.45.0.jar -role node  -hub http://localhost:4444/grid/register -Dwebdriver.chrome.driver=chromedriver.exe  -Dwebdriver.ie.driver=IEDriverServer.exe  //In the Standalone folder.
 
 
+### Parameters
+
+    java -jar selenium-server-standalone-2.45.0.jar -role node  -hub http://localhost:4444/grid/register
+  
+The default port the hub uses to listen for new requests is port 4444. This is why port 4444 was used in the URL for locating the hub. Also the use of ‘localhost’ assumes your node is running on the same machine as your hub
+
+    -Dwebdriver.chrome.driver=chromedriver.exe  -Dwebdriver.ie.driver=IEDriverServer.exe
+  
+-Dwebdriver.chrome.driver is used to set up the chromedriver path.
+-Dwebdriver.ie.driver is used to set up the InternetExplorerDriver path.
+
+    -port 4441
+  
+-port 4441 is used to set up the port used by the hub.
+
