@@ -22,7 +22,7 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 -Dwebdriver.chrome.driver is used to set up the chromedriver path.
 -Dwebdriver.ie.driver is used to set up the InternetExplorerDriver path.
 
-    -port 4441
+    -port xxxx
   
--port 4441 is used to set up the port used by the hub.
+-port  is used to set up the port used by the hub.
 
