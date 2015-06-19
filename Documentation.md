@@ -22,6 +22,7 @@ The default port the hub uses to listen for new requests is port 4444. This is w
     -Dwebdriver.chrome.driver=chromedriver.exe  -Dwebdriver.ie.driver=IEDriverServer.exe
   
 -Dwebdriver.chrome.driver is used to set up the chromedriver path.
+
 -Dwebdriver.ie.driver is used to set up the InternetExplorerDriver path.
 
     -port xxxx
@@ -32,7 +33,7 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 -browser is used to specify an additional browser that to be used and set the browser settings.
 
-    -maxSession 
+    -maxSession x
     
 -maxSession is used to set the maximum number of browsers that can run in parallel on the node.
 
