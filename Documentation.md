@@ -99,3 +99,13 @@ Example:
      [assembly: DegreeOfParallelism(4)]
 
      [assembly: Parallelizable(TestScope.Self)]
+
+DegreeOfParallelism: Specifies the maximun number of concurrent threads to use when tests are run in parallel for all tests in the test assembly.
+
+TestScope: Specifies the scope to which certain attribute apply.
+
+**TestScope types:**
+
+Self: Applies to the corresponding test only.
+All: Applies to the corresponding test and his descendants.
+Descendants: Applies of the descendants for the corresponding test.
