@@ -269,4 +269,4 @@ In this case the constructor parameter will take the row parameter.
 
 We can set multiple parameters in the same tag: [Row("chrome","40")]-> browser and version. It's possible set multiple parameters in a unique tag->[Column("chrome","firefox","internet explorer")] and we can take those parameter from a config file.
 
-I don't like those solutions because I have to change the structure project, and create constructors in each test class or parametrized each test class without inherit to test base.
+I don't like those solutions because I have to change the structure project, and create constructors in each test class or parametrized each test class without inherit to test base.Technically is not correct parametrize this type of classes. 
