@@ -154,14 +154,14 @@ Descendants: Applies of the descendants for the corresponding test.
 
 **1-** First we have to set the driver Capabilities
  
- -We have to indicate the OS that will be run the test cases,it's indicate in the Selenium Grid console.-> http://www.screencast.com/t/Ar9OX37eH
+ **-**We have to indicate the OS that will be run the test cases,it's indicate in the Selenium Grid console.-> http://www.screencast.com/t/Ar9OX37eH
 
  Example:
 
            DesiredCapabilities capabilities = new DesiredCapabilities();
            capabilities.SetCapability(CapabilityType.Platform, PlatformType.Vista);
 
--We have to indicate the browser in that will be run the test cases.
+**-**We have to indicate the browser in that will be run the test cases.
 
 Example:
 
@@ -175,7 +175,7 @@ In c# the corresponding names are:
      
            Firefox:"firefox"
 
--We can indicate the browser version.
+**-**We can indicate the browser version.
 
 Example:
 
