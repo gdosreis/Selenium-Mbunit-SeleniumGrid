@@ -160,3 +160,17 @@ Descendants: Applies of the descendants for the corresponding test.
 
            DesiredCapabilities capabilities = new DesiredCapabilities();
            capabilities.SetCapability(CapabilityType.Platform, PlatformType.Vista);
+
+-We have to indicate the browser in that will be run the test cases.
+
+Example:
+
+           DesiredCapabilities capabilities = new DesiredCapabilities();
+           capabilities.SetCapability(CapabilityType.BrowserName, "chrome");
+In c# the corresponding names are:
+
+     Internet Explorer:"internet explorer"
+     
+     Google Chrome:"chrome"
+     
+     Firefox:"firefox"
