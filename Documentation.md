@@ -169,8 +169,22 @@ Example:
            capabilities.SetCapability(CapabilityType.BrowserName, "chrome");
 In c# the corresponding names are:
 
-     Internet Explorer:"internet explorer"
+           Internet Explorer:"internet explorer"
      
-     Google Chrome:"chrome"
+           Google Chrome:"chrome"
      
-     Firefox:"firefox"
+           Firefox:"firefox"
+
+-We can indicate the browser version.
+
+Example:
+
+           DesiredCapabilities capabilities = new DesiredCapabilities();
+           capabilities.SetCapability(CapabilityType.Version, "40");
+
+Other capabilities: 
+ 
+ IsJavaScriptEnabled: Enable or disable javascript executions in the coresponding browser.
+ AcceptSslCertificates: Indicate if the browser accepts ssl Certificates.
+ Proxy: Indicate the browser proxy.
+ TakesScreenshot: Indicate if the browser can take screenshots.
