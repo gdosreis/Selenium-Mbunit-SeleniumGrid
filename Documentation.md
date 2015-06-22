@@ -148,3 +148,15 @@ Descendants: Applies of the descendants for the corresponding test.
 **5-** Import the dll project.
 
 **6-** Run the corresponding test cases.
+
+
+##How configure a remote driver?
+
+**1-** First we have to set the driver Capabilities
+ 
+ -We have to indicate the OS that will be run the test cases,it's indicate in the Selenium Grid console.-> http://www.screencast.com/t/Ar9OX37eH
+
+ Example:
+
+           DesiredCapabilities capabilities = new DesiredCapabilities();
+           capabilities.SetCapability(CapabilityType.Platform, PlatformType.Vista);
