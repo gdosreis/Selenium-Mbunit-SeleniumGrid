@@ -1,5 +1,6 @@
 # Selenium-Mbunit-SeleniumGrid
 
+
 ## How configure Selenium Grid?
 
 **1-**  download Selenium Standalone from http://www.seleniumhq.org/download/.
@@ -45,11 +46,13 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 
 
+
 ##How configure MBunit?
 
 **1-** Install the Gallio-MBunit pakage
 
 **2-** Add the MBunit and Gallio reference within the reference automation project.
+
 
 
 ### How parallelize the test case execution?
