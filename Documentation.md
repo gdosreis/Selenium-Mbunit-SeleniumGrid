@@ -133,3 +133,18 @@ Self: Applies to the corresponding test only.
 All: Applies to the corresponding test and his descendants.
 
 Descendants: Applies of the descendants for the corresponding test.
+
+
+##How Run MBunit test cases?
+
+**1-** Download the Gallio tool from: https://code.google.com/p/mb-unit/downloads/list
+
+**2-** Install the downloaded tool. 
+
+**3-** Open the Icarus GUI Test Runner tool.
+
+**4-** Build the Automation project from Visual Studio.
+
+**5-** Import the dll project.
+
+**6-** Run the corresponding test cases.
