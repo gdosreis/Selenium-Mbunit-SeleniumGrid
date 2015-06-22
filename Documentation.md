@@ -107,5 +107,7 @@ TestScope: Specifies the scope to which certain attribute apply.
 **TestScope types:**
 
 Self: Applies to the corresponding test only.
+
 All: Applies to the corresponding test and his descendants.
+
 Descendants: Applies of the descendants for the corresponding test.
