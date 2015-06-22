@@ -202,7 +202,7 @@ Descendants: Applies of the descendants for the corresponding test.
 
 ##How create a cross browser??
 
-In order to run the corresponding test case in the local machine, we can parameterize the test base class.
+For run the corresponding test cases in the local machine,we can parameterize the test base class.
 
 Example:
 
@@ -226,3 +226,47 @@ Example:
         driver.Manage().Window.Maximize();
         driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
     }
+
+Each [Row()] it a parameter that the corresponding class will take. It's works as a thread and will run the test case suite for each indicated parameter.
+In this case will parallelize all test cases for each driver type in simultaneous.
+
+
+For run the corresponding test cases in the remote machine,we can create a contructor for the Test base class and use the row tag to set the corresponding parameters.
+
+Example:
+
+    /// <summary>
+    /// It is the base class for the test cases. Will setup the initials conditions to run the corresponding test cases.
+    /// </summary>
+    [TestFixture]
+    [Row("chrome")]
+    [Row("firefox")]
+    public class TestBase
+    {
+        protected IWebDriver remoteDriver;
+        private string browser;
+
+        public TestBase(string browserName)
+        {
+            this.browser = browserName;
+        }
+
+        /// <summary>
+        /// It's class will be executed before to execute each test case. Will initialize the remote driver and goes to the base page.
+        /// </summary>
+        [SetUp]
+        public void InitBrowser()
+        {           
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.SetCapability(CapabilityType.Platform, PlatformType.Vista); // Set the OS in that will be run the test cases.
+            capabilities.SetCapability(CapabilityType.BrowserName, browser);// Set the browser in that will be run the test cases.
+            remoteDriver = new RemoteWebDriver(new Uri("http://192.168.6.83:5555/wd/hub"), capabilities);//Instance a remote webdriver with the remote machine direction. 
+            remoteDriver.Manage().Window.Maximize();
+            remoteDriver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
+        }
+     
+In this case the constructor parameter will take the row parameter.
+
+We can set multiple parameters in the same tag: [Row("chrome","40")]-> browser and version. It's possible set multiple parameters in a unique tag->[Column("chrome","firefox","internet explorer")] and we can take those parameter from a config file.
+
+I don't like those solutions because I have to change the structure project, and create constructors in each test class or parametrized each test class without inherit to test base.
