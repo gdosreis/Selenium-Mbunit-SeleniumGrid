@@ -198,3 +198,31 @@ Descendants: Applies of the descendants for the corresponding test.
 
            remoteDriver = new RemoteWebDriver(new Uri("http://192.168.6.83:5555/wd/hub"), capabilities);
            We have to add /wd/hub in the remote url
+
+
+##How create a cross browser??
+
+In order to run the corresponding test case in the local machine, we can parameterize the test base class.
+
+Example:
+
+           /// <summary>
+    /// It is the base class for the test cases. Will setup the initials conditions to run the corresponding test cases.
+    /// </summary>
+    [TestFixture]
+    [Row(typeof(FirefoxDriver))]
+    [Row(typeof(ChromeDriver))]
+    public class TestBase<Tdriver> where Tdriver : IWebDriver, new(){
+          
+     protected IWebDriver driver;
+
+    /// <summary>
+    /// It's class will be executed before to execute each test case. Will initialize the remote driver and goes to the base page.
+    /// </summary>
+    [SetUp]
+    public void InitBrowser()
+    {
+        driver = new Tdriver();
+        driver.Manage().Window.Maximize();
+        driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
+    }
