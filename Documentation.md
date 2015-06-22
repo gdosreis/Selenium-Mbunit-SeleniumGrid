@@ -185,6 +185,9 @@ Example:
 Other capabilities: 
  
  IsJavaScriptEnabled: Enable or disable javascript executions in the coresponding browser.
+ 
  AcceptSslCertificates: Indicate if the browser accepts ssl Certificates.
+ 
  Proxy: Indicate the browser proxy.
+ 
  TakesScreenshot: Indicate if the browser can take screenshots.
