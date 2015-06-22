@@ -56,7 +56,7 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 **1-** Set each test classes with the next tags: TestFixture and Parallelizable.
  
- Example:
+  Example:
 
     /// <summary>
     /// This class checks the Home page functionality
@@ -89,10 +89,47 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 [Parallelizable]: Specifies that the corresponding test can be run in parallel with other parallelizable test.
 
+**2-** Set each test case with the [Test] tag, preconditions with [SetUp] and postconditions with [TearDown] tag.
 
-**2-** Go to the AssemblyInfo.cs Property file
+ Example:
+  
+        /// <summary>
+        /// Login in the application
+        /// </summary>
+        [SetUp]
+        public void InitHomeTestCases()
+        {
+            home = new LoginPage(GetDriver()).Login(ConfigUtil.GetString("user.username"), ConfigUtil.GetString("user.password"));
+        }
 
-**3-** Add the next properties : DegreeOfParallelism and Parallelizable
+        /// <summary>
+        /// TEST CASE ID = *****. This test case verify the Username link behavior.
+        /// </summary>
+        [Test]
+        public void UserClicksOnUsername()
+        {
+            MyDxPage myDx = home.ClickUserName();
+            Assert.IsTrue(myDx.AreMyDxElementsPresents());
+        }
+
+        /// <summary>
+        /// Logout from the application.
+        /// </summary>
+        [TearDown]
+        public void HomeTestCasesCleanUp()
+        {
+            home.LogOut();
+        }
+
+[Test]: Specifies that a method represents a single test.
+
+[SetUp]: Specifies a method that is to be invoked before each test.
+
+[TearDown]: Specifies a method that is to be invoked after each test.
+
+**3-** Go to the AssemblyInfo.cs Property file
+
+**4-** Add the next properties : DegreeOfParallelism and Parallelizable
 
 Example:
 
