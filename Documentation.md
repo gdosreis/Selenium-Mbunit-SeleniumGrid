@@ -161,13 +161,13 @@ Descendants: Applies of the descendants for the corresponding test.
            DesiredCapabilities capabilities = new DesiredCapabilities();
            capabilities.SetCapability(CapabilityType.Platform, PlatformType.Vista);
 
-**-**We have to indicate the browser in that will be run the test cases.
+ **-**We have to indicate the browser in that will be run the test cases.
 
-Example:
+  Example:
 
            DesiredCapabilities capabilities = new DesiredCapabilities();
            capabilities.SetCapability(CapabilityType.BrowserName, "chrome");
-In c# the corresponding names are:
+  In c# the corresponding names are:
 
            Internet Explorer:"internet explorer"
      
@@ -175,19 +175,26 @@ In c# the corresponding names are:
      
            Firefox:"firefox"
 
-**-**We can indicate the browser version.
+ **-**We can indicate the browser version.
 
-Example:
+  Example:
 
            DesiredCapabilities capabilities = new DesiredCapabilities();
            capabilities.SetCapability(CapabilityType.Version, "40");
 
-Other capabilities: 
+ Other capabilities: 
  
- IsJavaScriptEnabled: Enable or disable javascript executions in the coresponding browser.
+  IsJavaScriptEnabled: Enable or disable javascript executions in the coresponding browser.
  
- AcceptSslCertificates: Indicate if the browser accepts ssl Certificates.
+  AcceptSslCertificates: Indicate if the browser accepts ssl Certificates.
  
- Proxy: Indicate the browser proxy.
+  Proxy: Indicate the browser proxy.
  
- TakesScreenshot: Indicate if the browser can take screenshots.
+  TakesScreenshot: Indicate if the browser can take screenshots.
+
+**2-** We have to set the instance the RemoteWebDriver with the seted capanilities and the remote machine url.The remote machine url could be take from Selenium Grid console.-->http://www.screencast.com/t/Ar9OX37eH
+
+ Example:
+
+           remoteDriver = new RemoteWebDriver(new Uri("http://192.168.6.83:5555/wd/hub"), capabilities);
+           We have to add /wd/hub in the remote url
