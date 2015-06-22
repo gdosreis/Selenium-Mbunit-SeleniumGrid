@@ -67,25 +67,7 @@ The default port the hub uses to listen for new requests is port 4444. This is w
     [TestFixture,Parallelizable]
     public class HomeTestCases: TestBase
     {
-        HomePage home;
-        /// <summary>
-        /// Login in the application
-        /// </summary>
-        [SetUp]
-        public void InitHomeTestCases()
-        {
-            home = new LoginPage(GetDriver()).Login(ConfigUtil.GetString("user.username"), ConfigUtil.GetString("user.password"));
-        }
-
-        /// <summary>
-        /// TEST CASE ID = *****. This test case verify if the Shopping Cart is displayed.
-        /// </summary>
-        [Test]
-        public void UserSeesHisShoppingCart()
-        {
-            MyDxPage myDx = home.ClickUserName();
-            Assert.IsTrue(myDx.AreMyDxElementsPresents());
-        }
+       ........
     }
 
 [TestFixture]: Specifies that class represent a test fixture(Test class).
