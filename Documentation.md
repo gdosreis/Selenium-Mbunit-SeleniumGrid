@@ -1,7 +1,7 @@
 # Selenium-Mbunit-SeleniumGrid
 
 
-## How configure Selenium Grid?
+## How to configure Selenium Grid?
 
 **1-**  download Selenium Standalone from http://www.seleniumhq.org/download/.
 
@@ -47,7 +47,7 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 
 
-##How configure MBunit?
+##How to configure MBunit?
 
 **1-** Install the Gallio-MBunit pakage
 
@@ -55,9 +55,9 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 
 
-### How parallelize the test case execution?
+### How to parallelize the test case execution?
 
-**1-** Set each test classes with the next tags: TestFixture and Parallelizable.
+**1-** Set each test class with the next tags: TestFixture and Parallelizable.
  
   Example:
 
@@ -108,9 +108,9 @@ The default port the hub uses to listen for new requests is port 4444. This is w
 
 [Test]: Specifies that a method represents a single test.
 
-[SetUp]: Specifies a method that is to be invoked before each test.
+[SetUp]: Specifies a method that will be invoked before each test.
 
-[TearDown]: Specifies a method that is to be invoked after each test.
+[TearDown]: Specifies a method that will be invoked after each test.
 
 **3-** Go to the AssemblyInfo.cs Property file
 
@@ -122,20 +122,20 @@ Example:
 
      [assembly: Parallelizable(TestScope.Self)]
 
-DegreeOfParallelism: Specifies the maximun number of concurrent threads to use when tests are run in parallel for all tests in the test assembly.
+DegreeOfParallelism: Specifies the maximun number of concurrent threads to use when tests are running in parallel for all tests in the test assembly.
 
-TestScope: Specifies the scope to which certain attribute apply.
+TestScope: Specifies the scope to which certain attribute applies.
 
 **TestScope types:**
 
 Self: Applies to the corresponding test only.
 
-All: Applies to the corresponding test and his descendants.
+All: Applies to the corresponding test and it's descendants.
 
 Descendants: Applies of the descendants for the corresponding test.
 
 
-##How Run MBunit test cases?
+##How to run MBunit test cases?
 
 **1-** Download the Gallio tool from: https://code.google.com/p/mb-unit/downloads/list
 
@@ -150,18 +150,18 @@ Descendants: Applies of the descendants for the corresponding test.
 **6-** Run the corresponding test cases.
 
 
-##How configure a remote driver?
+##How to configure a remote driver?
 
 **1-** First we have to set the driver Capabilities
  
- **-**We have to indicate the OS that will be run the test cases,it's indicate in the Selenium Grid console.-> http://www.screencast.com/t/Ar9OX37eH
+ **-**We have to indicate the OS that will be used to run the test cases,it's indicated in the Selenium Grid console.-> http://www.screencast.com/t/Ar9OX37eH
 
  Example:
 
            DesiredCapabilities capabilities = new DesiredCapabilities();
            capabilities.SetCapability(CapabilityType.Platform, PlatformType.Vista);
 
- **-**We have to indicate the browser in that will be run the test cases.
+ **-**We have to indicate the browser to be used to run the test cases.
 
   Example:
 
@@ -192,7 +192,7 @@ Descendants: Applies of the descendants for the corresponding test.
  
   TakesScreenshot: Indicate if the browser can take screenshots.
 
-**2-** We have to set the instance the RemoteWebDriver with the seted capanilities and the remote machine url.The remote machine url could be take from Selenium Grid console.-->http://www.screencast.com/t/Ar9OX37eH
+**2-** We have to set the instance the RemoteWebDriver with the seted capanilities and the remote machine url.The remote machine url could be taken from Selenium Grid console.-->http://www.screencast.com/t/Ar9OX37eH
 
  Example:
 
@@ -200,7 +200,7 @@ Descendants: Applies of the descendants for the corresponding test.
            We have to add /wd/hub in the remote url
 
 
-##How create a cross browser??
+##How to create a cross browser??
 
 For run the corresponding test cases in the local machine,we can parameterize the test base class.
 
@@ -227,7 +227,7 @@ Example:
         driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
     }
 
-Each [Row()] it a parameter that the corresponding class will take. It's works as a thread and will run the test case suite for each indicated parameter.
+Each [Row()] is a parameter that the corresponding class will take. It works as a thread and will run the test case suite for each indicated parameter.
 In this case will parallelize all test cases for each driver type in simultaneous.
 
 
@@ -267,6 +267,6 @@ Example:
      
 In this case the constructor parameter will take the row parameter.
 
-We can set multiple parameters in the same tag: [Row("chrome","40")]-> browser and version. It's possible set multiple parameters in a unique tag->[Column("chrome","firefox","internet explorer")] and we can take those parameter from a config file.
+We can set multiple parameters in the same tag: [Row("chrome","40")]-> browser and version. It's possible set multiple parameters in a unique tag->[Column("chrome","firefox","internet explorer")] and we can take those parameters from a config file.
 
 I don't like those solutions because I have to change the structure project, and create constructors in each test class or parametrized each test class without inherit to test base.Technically is not correct parametrize this type of classes. 
